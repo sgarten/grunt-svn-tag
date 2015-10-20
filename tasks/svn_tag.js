@@ -88,7 +88,7 @@ module.exports = function(grunt) {
     try {
       var _svnInfo = svnInfo.sync()
         , path = _svnInfo.relativeUrl ? _svnInfo.relativeUrl : _svnInfo.url;
-      path.split('/').every(function(part, ix, arr) {
+      path.split('/').reverse().every(function(part, ix, arr) {
         part = part.toLowerCase();
         if(part === 'trunk') {
           fromPath = '/trunk/';
